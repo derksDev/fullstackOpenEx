@@ -1,11 +1,11 @@
 sequenceDiagram
     Note over Browser: User write a note
     Note over Browser: User click save button
+    Note over Browser: Form submit send data to server <br> and perform reload of the page
     Browser->>+Server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note
 
     Note over Server: Server recieves note text
     Note over Server: Server saves the note text in DB
-    Note over Browser: Form submit reload page
     Browser->>Server: GET https://studies.cs.helsinki.fi/exampleapp/notes
 
     Server-->>Browser: HTML document
