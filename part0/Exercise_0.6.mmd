@@ -1,0 +1,11 @@
+sequenceDiagram
+    Note over Browser: User write a note
+    Note over Browser: User click save button
+    Note over Browser: JavaScript event onsubmit is called
+    Note over Browser: Note text and date is added to notes array
+    Note over Browser: Notes are redraw without reload the page using <br> redrawNotes() method
+    Browser->>+Server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+
+    Note over Server: Server recieves note text
+    Note over Server: Server saves the note text in DB
+    

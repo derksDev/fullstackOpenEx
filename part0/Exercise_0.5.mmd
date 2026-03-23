@@ -1,0 +1,18 @@
+sequenceDiagram
+    Browser->>Server: GET https://studies.cs.helsinki.fi/exampleapp/spa
+
+    Server-->>Browser: HTML document
+    
+    Browser->>Server: GET https://studies.cs.helsinki.fi/exampleapp/main.css
+    Server-->>Browser: CSS file
+
+    Browser->>Server: GET https://studies.cs.helsinki.fi/exampleapp/spa.js
+    Server-->>Browser: JavaScript file
+
+    Note over Browser: The browser execute the JavaScript code that fetches the JSON <br> and draw the notes in the page calling the method redrawNotes()
+
+    Browser->>Server: GET https://studies.cs.helsinki.fi/exampleapp/data.json
+    Server-->>Browser: [{"content":"jjj","date":"2026-03-22T19:02:20.982Z"}, ... ]
+
+    Note over Browser: The browser executes the callback <br> function that renders the notes
+    
